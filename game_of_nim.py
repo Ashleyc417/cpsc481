@@ -11,7 +11,7 @@ class GameOfNim(Game):
         self.initial = GameState(to_move = 'MAX',
                                  utility = 0, 
                                  board = board, 
-                                 moves = self.generate_valid_moves(GameState(board)))
+                                 moves = self.generate_valid_moves(board))
 
     def generate_valid_moves(self, board: List[int]) -> List[Tuple[int, int]]:
         """Generate all valid moves for the current state."""
@@ -46,7 +46,7 @@ class GameOfNim(Game):
         new_state = GameState(to_move=next_player,
                               utility=self.utility(state, state.to_move),
                               board=board,
-                              moves=self.actions(GameState(board)))
+                              moves=self.generate_valid_moves(board))
         return new_state
 
 
