@@ -25,7 +25,7 @@ class GameOfNim(Game):
                 
 
     def actions(self, state: GameState) -> List[Tuple[int, int]]:
-        """Legal moves are a6t least one object, all from the same row."""
+        """Legal moves are at least one object, all from the same row."""
         return state.moves
     
     def result(self, state: GameState, move: Tuple[int, int]) -> GameState:
